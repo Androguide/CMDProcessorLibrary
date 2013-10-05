@@ -26,3 +26,14 @@ if (CMDProcessor.canSu()) { ... }
 CMDProcessor.runShellCommand("echo test" + "\n" + "touch /sdcard/test.txt" + "\n" + "ls -n");
 
 ```
+
+Preferably use this library in a separate thread or AsyncTask or you will block the UI thread.
+```java
+new Thread(new Runnable() {
+			
+	@Override
+	public void run() {
+		CMDProcessor.runShellCommand("...");		
+	}
+	
+}).start();

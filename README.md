@@ -24,4 +24,5 @@ if (CMDProcessor.canSu()) { ... }
     
 // Executing several commands at once
 CMDProcessor.runShellCommand("echo test" + "\n" + "touch /sdcard/test.txt" + "\n" + "ls -n");
+
 ```
